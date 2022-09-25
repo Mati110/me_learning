@@ -25,18 +25,20 @@ def ask_data():
     return Per.create_person(nm, lnm, d, bd, bm, by, sx)
 
 
-""""original_out = sys.stdout
+"""
+original_out = sys.stdout
     with open("src/Person.txt", "a") as f:
         sys.stdout = f
         mister.print_person()
-        sys.stdout = original_out"""
-"""ale = ask_data()
+        sys.stdout = original_out
+ale = ask_data()
 ale.print_person()
-ale.write_person_file()"""
-"""x = datetime.datetime.now()
+ale.write_person_file()
+x = datetime.datetime.now()
 n = datetime.datetime(3022, 12, 25)
 print(n.year)
-print(n.strftime("on %A %d of %B on the year %Y"))"""
-"""ale = ask_data()
-ale.print_json_person()"""
+print(n.strftime("on %A %d of %B on the year %Y"))
+ale = ask_data()
+ale.print_json_person()
+"""
 

@@ -1,4 +1,3 @@
-# Count   
 def minion_game(string):
     s = str.upper(string)
     max_len = 10**6
@@ -149,3 +148,51 @@ def diagonal_difference(arr):
     for i in range(len(arr)):
         ab = ab + arr[i][i] - arr[i][(i+1)*-1]
     return ab if ab >= 0 else ab * -1
+
+
+def counting_sort(arr):
+    aas = [0] * 100
+    for i in range(len(arr)):
+        aas[arr[i]] += 1
+    return aas
+
+
+def caesar_cipher(s, k):
+    cc = ""
+    for cl in s:
+        if not cl.isalpha():
+            cc += cl
+            continue
+        x = ord(cl) + (k % 26)
+        print(x)
+        if (cl.isupper() and x > ord("Z")) or x > ord("z"):
+            x -= 26
+        cc += chr(x)
+    return cc
+
+
+def palindrome_index(s):
+    hlv = int(len(s) / 2)
+    st, en = 0, len(s) - 1
+    for lt in range(hlv):
+        if s[st] != s[en]:
+            if s[st] == s[en - 1]:
+                return en
+            else:
+                return st
+        st += 1
+        en -= 1
+    return -1
+
+
+def grid_challenge(grid):
+    res = "YES"
+    l1 = len(grid)
+    l2 = len(grid[0])
+    for i in range(l1):
+        grid[i] = sorted(grid[i])
+    for r in range(l2-1):
+        for c in range(l2):
+            if ord(grid[r][c]) > ord(grid[r+1][c]):
+                return "NO"
+    return res
